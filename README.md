@@ -17,6 +17,24 @@
 
 **Not included:** unattended 24/7 monitoring, automatic host containment, and verified real-world detection accuracy. The background monitoring and detection-validation upgrades are future work.
 
+
+## Custom Wazuh Detection Rules
+
+SentinelSOC includes custom XML detection rules developed
+and tested in a controlled Wazuh lab environment.
+
+- **Rule 100120:** Repeated failed login attempts (T1110)
+- **Rule 100121:** User discovery using `whoami` (T1033)
+
+The detections use Wazuh's rule engine and MITRE ATT&CK
+mappings to support security monitoring and investigation.
+
+[View Custom Detection Rules](wazuh-rules/README.md)
+
+[View Rule Definitions](wazuh-rules/sentinelsoc_rules.xml)
+
+
+
 ## Project Screenshots
 
 ### Live SOC Monitoring Dashboard
