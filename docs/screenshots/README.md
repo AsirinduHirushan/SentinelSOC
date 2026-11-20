@@ -23,7 +23,7 @@ Screenshots captured during security monitoring, detection validation, and incid
 ![Custom Detection](05-custom-detection.png)
 
 ### Additional Custom Detection
-![Custom Detection 2](05-custom-detection2.png)
+![Additional Custom Detection](05-custom-detection2.png)
 
 ### Sysmon Process Creation
 ![Sysmon Process Creation](06-sysmon-process-creation.png)
@@ -45,6 +45,28 @@ Screenshots captured during security monitoring, detection validation, and incid
 ### File Who-Data Attribution
 ![Who-Data Attribution](11-whodata-attribution.png)
 
+## 4. Advanced SOC Features
+
+### MITRE ATT&CK Mapping
+SentinelSOC maps detection alerts to potential MITRE ATT&CK techniques.
+
+![MITRE ATT&CK Mapping](12-mitre-attack-mapping.png)
+
+### Automated Escalation Inbox
+Risk-based incident prioritization and analyst-controlled escalation.
+
+![Automated Escalation Inbox](13-escalation-inbox.png)
+
+### Incident Response Recommendations
+Investigation, evidence preservation, containment and escalation guidance.
+
+![Incident Response Recommendations](14-response-recommendations.png)
+
+### Incident Handoff Reports
+Downloadable investigation reports containing case details and analyst findings.
+
+![Incident Handoff Report](15-handoff-report.png)
+
 ---
 
-**Note:** These screenshots document controlled laboratory activities. Detection alerts do not necessarily indicate confirmed malicious activity.
+**Note:** These screenshots document controlled laboratory activities. Alerts and ATT&CK mappings do not necessarily indicate confirmed malicious activity.

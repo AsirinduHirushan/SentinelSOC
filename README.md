@@ -35,21 +35,33 @@ mappings to support security monitoring and investigation.
 
 
 
-## Project Screenshots
 
-### Live SOC Monitoring Dashboard
-![SentinelSOC Dashboard](docs/screenshots/08-live-soc-dashboard.png)
+## SentinelSOC — Screenshots
+
+### Live SOC Dashboard
+![Live SOC Dashboard](docs/screenshots/08-live-soc-dashboard.png)
 
 ### Advanced Alert Correlation
-![Correlation Timeline](docs/screenshots/10-live-correlation-timeline.png)
+![Alert Correlation](docs/screenshots/10-live-correlation-timeline.png)
 
-### Custom Wazuh Detection
-![Custom Detection](docs/screenshots/05-custom-detection.png)
+### MITRE ATT&CK Mapping
+![MITRE ATT&CK Mapping](docs/screenshots/12-mitre-attack-mapping.png)
 
-### File Who-Data Investigation
-![Who-Data Attribution](docs/screenshots/11-whodata-attribution.png)
+### Automated Escalation Inbox
+![Escalation Inbox](docs/screenshots/13-escalation-inbox.png)
 
-[View all detection and investigation screenshots](docs/screenshots/README.md)
+### Incident Response Recommendations
+![Response Recommendations](docs/screenshots/14-response-recommendations.png)
+
+### Incident Handoff Report
+![Incident Handoff Report](docs/screenshots/15-handoff-report.png)
+
+### More Screenshots
+
+[View all 16 detection and investigation screenshots](docs/screenshots/README.md)
+
+
+
 
 
 ## Architecture
