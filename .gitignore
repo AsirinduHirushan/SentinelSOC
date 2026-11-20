@@ -1,0 +1,50 @@
+# Private configuration and certificates
+.streamlit/secrets.toml
+.streamlit/certs/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.jks
+
+# Runtime databases, generated reports, raw Wazuh exports
+/local/
+/reports/
+*.sqlite
+*.sqlite3
+*.db
+/real_alerts.jsonl
+/sentinelsoc_alerts.jsonl
+/alerts.json
+/archives.json
+/data/*.jsonl
+!/data/sentinelsoc-alerts.jsonl
+!/data/synthetic-correlation-demo.jsonl
+
+# Python and editor runtime
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.envrc
+.streamlit/cache/
+.vscode/settings.json
+
+# Previous upgrade backups, installers and scratch
+*.bak
+*.backup
+*.before-*
+*.pre-*.bak
+*.log
+*.tmp
+*.rar
+*.zip
+.DS_Store
+Thumbs.db

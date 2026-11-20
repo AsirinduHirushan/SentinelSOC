@@ -1,0 +1,26 @@
+
+<group name="sentinelsoc,">
+
+  <rule id="100120" level="10" frequency="4" timeframe="120">
+    <if_matched_sid>60122</if_matched_sid>
+    <same_field>win.eventdata.targetUserName</same_field>
+    <description>SentinelSOC: Repeated failed logins for the same account - possible password guessing</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <group>authentication_failed,custom_detection,</group>
+  </rule>
+
+<rule id="100121" level="7">
+  <if_sid>92004</if_sid>
+  <field name="win.eventdata.commandLine" type="pcre2">(?i)\bwhoami(?:\.exe)?\b</field>
+  <description>SentinelSOC: User discovery command launched via PowerShell and CMD</description>
+  <mitre>
+    <id>T1033</id>
+  </mitre>
+  <group>sysmon,process_monitoring,custom_detection,</group>
+</rule>
+
+
+
+</group>

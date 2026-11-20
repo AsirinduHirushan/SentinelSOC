@@ -1,0 +1,26 @@
+# EXAMPLE ONLY — do NOT overwrite your working .streamlit/secrets.toml!
+# Copy ONLY the [notifications] section(s) you want into the existing secrets file.
+# Keep existing [wazuh] settings and all other settings unchanged.
+# Leave enabled = false while testing local handoff exports.
+
+[notifications]
+enabled = false
+
+# Option A: generic HTTPS JSON webhook (configure an endpoint you administer).
+# Supports a generic JSON receiver, not automatically Slack/Discord-specific formats.
+[notifications.webhook]
+url = "https://example.org/your-private-webhook"
+label = "SOC incident receiver"
+min_priority = "P2"        # or "P1" to restrict external delivery
+
+# Option B: SMTP — an approved SMTP account/app-password must be configured.
+# Remove the entire [notifications.email] section if using webhook only.
+[notifications.email]
+host = "smtp.example.org"
+port = 465
+security = "ssl"           # ssl=465, or starttls=587 for supported servers
+username = "soc@example.org"
+password = "REPLACE_WITH_PRIVATE_APP_PASSWORD"
+from_email = "soc@example.org"
+to_email = "approved-analyst@example.org"
+min_priority = "P2"

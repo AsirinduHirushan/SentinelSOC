@@ -1,0 +1,6 @@
+# Direct dependencies; use a dedicated virtual environment (Python 3.12-3.14).
+streamlit>=1.40,<2
+plotly>=6,<7
+requests>=2.31,<3
+numpy>=2.4,<3
+pandas>=2.3.3,<3
