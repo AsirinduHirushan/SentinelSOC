@@ -1,12 +1,50 @@
-# Screenshots for public portfolio
 
-Add **only redacted** images of your actual running SentinelSOC interface, such as:
+# SentinelSOC — Detection & Investigation Screenshots
 
-- `01-operations-overview.png`
-- `02-correlation-timeline.png`
-- `03-attack-mapping.png`
-- `04-escalation-inbox.png`
-- `05-handoff-report.png`
-- `06-tests-passed.png`
+Screenshots captured during security monitoring, detection validation, and incident investigation in the SentinelSOC lab environment.
 
-Before committing, crop or redact hostnames, account names, private IPs, email addresses, local filesystem paths, tokens, and alert contents that identify real people or infrastructure. Never include secrets or CA material. Screenshots must reflect your real results, not fabricated outputs.
+## 1. Wazuh & Windows Monitoring
+
+### Windows Endpoint Connected
+![Windows Endpoint](01-wazuh-windows-endpoint.png)
+
+### Windows Failed Login Detection
+![Windows Failed Login](02-windows-failed-login.png)
+
+### Wazuh Authentication Alert
+![Wazuh Authentication](03-wazuh-failed-login.png)
+
+### File Integrity Monitoring
+![File Modification](04-file-modification.png)
+
+## 2. Custom Security Detections
+
+### Custom Detection Rule
+![Custom Detection](05-custom-detection.png)
+
+### Additional Custom Detection
+![Custom Detection 2](05-custom-detection2.png)
+
+### Sysmon Process Creation
+![Sysmon Process Creation](06-sysmon-process-creation.png)
+
+### Custom Sysmon Detection
+![Sysmon Detection](07-custom-sysmon-detection.png)
+
+## 3. SentinelSOC Analyst Workbench
+
+### Live SOC Dashboard
+![Live SOC Dashboard](08-live-soc-dashboard.png)
+
+### Synthetic Correlation Timeline
+![Synthetic Timeline](09-synthetic-correlation-timeline.png)
+
+### Live Alert Correlation
+![Live Correlation](10-live-correlation-timeline.png)
+
+### File Who-Data Attribution
+![Who-Data Attribution](11-whodata-attribution.png)
+
+---
+
+**Note:** These screenshots document controlled laboratory activities. Detection alerts do not necessarily indicate confirmed malicious activity.

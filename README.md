@@ -17,6 +17,23 @@
 
 **Not included:** unattended 24/7 monitoring, automatic host containment, and verified real-world detection accuracy. The background monitoring and detection-validation upgrades are future work.
 
+## Project Screenshots
+
+### Live SOC Monitoring Dashboard
+![SentinelSOC Dashboard](docs/screenshots/08-live-soc-dashboard.png)
+
+### Advanced Alert Correlation
+![Correlation Timeline](docs/screenshots/10-live-correlation-timeline.png)
+
+### Custom Wazuh Detection
+![Custom Detection](docs/screenshots/05-custom-detection.png)
+
+### File Who-Data Investigation
+![Who-Data Attribution](docs/screenshots/11-whodata-attribution.png)
+
+[View all detection and investigation screenshots](docs/screenshots/README.md)
+
+
 ## Architecture
 
 ```text
