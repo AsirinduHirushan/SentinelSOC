@@ -149,6 +149,21 @@ The included demo notification script uses a simulated provider; **it does not s
 
 Add only **reviewed, redacted** screenshots and custom rules to their corresponding folders. Avoid publishing hostnames, credentials, real alert contents, network diagrams with personal IPs, or internal endpoint paths.
 
+
+
+## SOC Investigation Case Studies
+
+### Case Study 01 — Windows User Discovery Detection
+
+Developed and validated a custom Wazuh detection rule for Windows user-discovery activity, then investigated the resulting alerts using SentinelSOC.
+
+**Highlights:** Sysmon process analysis, custom Wazuh rule 100121, MITRE ATT&CK T1033/T1059.003, alert correlation, risk scoring, and documented analyst closure.
+
+[Read the Full Investigation Case Study](docs/investigations/CASE_STUDY_01_USER_DISCOVERY.md)
+
+
+
+
 ## Project status
 
 **Current release candidate:** functional lab workbench, with background monitoring and repeatable detection engineering planned. This is a learning and portfolio project; it has not undergone an independent security audit.
