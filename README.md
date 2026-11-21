@@ -58,7 +58,7 @@ mappings to support security monitoring and investigation.
 
 ### More Screenshots
 
-[View all 16 detection and investigation screenshots](docs/screenshots/README.md)
+[View all 20 detection and investigation screenshots](docs/screenshots/README.md)
 
 
 

@@ -57,11 +57,25 @@ class LiveSourceError(RuntimeError):
 
 
 def _check_local_url(url):
-    parsed = urlsplit(url)
-    if (parsed.scheme != "https" or parsed.hostname not in ALLOWED_HOSTS
-            or parsed.port != 9200 or parsed.username or parsed.password
-            or parsed.path not in ("", "/") or parsed.query or parsed.fragment):
-        raise LiveSourceError("Use https://127.0.0.1:9200 through an SSH port forward only.")
+    """Only accept the local TLS endpoint; never send credentials to a remote URL."""
+    try:
+        parsed = urlsplit(url)
+        allowed = (
+            parsed.scheme == "https"
+            and parsed.hostname in ALLOWED_HOSTS
+            and parsed.port == 9200
+            and parsed.username is None
+            and parsed.password is None
+            and parsed.path in ("", "/")
+            and not parsed.query
+            and not parsed.fragment
+        )
+    except (TypeError, ValueError):
+        allowed = False
+    if not allowed:
+        raise LiveSourceError(
+            "Use https://127.0.0.1:9200 through an SSH port forward only."
+        )
     return url.rstrip("/")
 
 
@@ -244,11 +258,24 @@ def fetch_recent_alerts(url, username, password, *, verify_tls=True, ca_bundle=N
                                  auth=(username, password), verify=verify,
                                  timeout=(4, 18), allow_redirects=False)
     except requests.exceptions.SSLError as exc:
-        raise LiveSourceError("TLS verification failed. Check the indexer CA and SSH tunnel; do not expose 9200.") from exc
-    except OSError as exc:
-        raise LiveSourceError("Cannot load the local Wazuh CA certificate; check ca_bundle path.") from exc
+        raise LiveSourceError(
+            "Wazuh TLS verification failed. Check that the local CA bundle trusts "
+            "the Indexer certificate and that its hostname is valid."
+        ) from exc
+    except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as exc:
+        raise LiveSourceError(
+            "Cannot reach Wazuh through the local SSH tunnel at 127.0.0.1:9200. "
+            "Check that the Wazuh VM and the SSH port forward are still running."
+        ) from exc
     except requests.exceptions.RequestException as exc:
-        raise LiveSourceError("Cannot reach the local indexer tunnel. Check SSH forwarding and Wazuh status.") from exc
+        raise LiveSourceError(
+            "The Wazuh Indexer HTTPS request failed. Check the tunnel and Indexer service."
+        ) from exc
+    except OSError as exc:
+        raise LiveSourceError(
+            "A local file or SSL initialization error occurred. Check CA bundle "
+            "read permissions and the SSH tunnel."
+        ) from exc
     if response.status_code == 401:
         raise LiveSourceError("Indexer authentication failed (401). Check local credentials.")
     if response.status_code == 403:
